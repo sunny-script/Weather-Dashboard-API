@@ -36,12 +36,15 @@ API Calls
 
 const fetchWeather = async (cityName: string) => {
   const response = await fetch('/api/weather/', {
+  //const response = await fetch('http://localhost:3001/api/weather', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ cityName }),
+    body: JSON.stringify({cityName}),
   });
+
+  console.log("Response: ", response);
 
   const weatherData = await response.json();
 
@@ -251,12 +254,14 @@ Event Handlers
 
 const handleSearchFormSubmit = (event: any): void => {
   event.preventDefault();
+  console.log("Input Value: ", searchInput.value);
 
   if (!searchInput.value) {
     throw new Error('City cannot be blank');
   }
 
   const search: string = searchInput.value.trim();
+  console.log("Search: ", search);
   fetchWeather(search).then(() => {
     getAndRenderHistory();
   });

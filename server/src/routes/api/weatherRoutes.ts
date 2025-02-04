@@ -6,8 +6,10 @@ const router = Router();
 
 // POST Request with city name to retrieve weather data DONE
 router.post('/', async (req: Request, res: Response) => {
-  const { city } = req.body;
-
+  console.log("Incoming Data: ", req.body);   // 
+  const { cityName } = req.body;
+  const city = cityName
+  console.log("City: ", city);
   if (!city) {
     return res.status(400).json({ error: 'City name is required' });
   }
@@ -29,6 +31,7 @@ router.post('/', async (req: Request, res: Response) => {
 
 // GET search history DONE
 router.get('/history', async (_req: Request, res: Response) => {
+  console.log("Hit History Route");
   try {
     // Get search history from HistoryService
     const history = await HistoryService.getCities();
