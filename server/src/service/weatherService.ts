@@ -26,8 +26,11 @@ class WeatherService {
   private apiKey: string = process.env.API_KEY || '';
 
   private async fetchLocationData(city: string): Promise<Coordinates | null> {
+    console.log("In weather service");
+    console.log("City: ", city);
     try {
       const query = `${this.baseURL}/geocode?apikey=${this.apiKey}&location=${city}`;
+      console.log("Query: ", query);
       const response = await fetch(query);
       const data = await response.json();
       return data[0] ?? null;

@@ -4,8 +4,9 @@ import path from 'path';
 dotenv.config();
 
 // Import the routes
-import apiRoutes from './routes/api/index.js';
-import htmlRoutes from './routes/htmlRoutes.js';
+import routes from './routes/index.js';
+//import apiRoutes from './routes/api/index.js';
+//import htmlRoutes from './routes/htmlRoutes.js';
 import { fileURLToPath } from 'url';
 
 const _filename = fileURLToPath(import.meta.url);
@@ -23,8 +24,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // TODO: Implement middleware to connect the routes DONE
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+console.log("Hit Server");
+app.use(routes)
+//app.use('/api', apiRoutes);
+//app.use('/', htmlRoutes);
 
 // Start the server on the port
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
