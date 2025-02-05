@@ -35,23 +35,25 @@ API Calls
 */
 
 const fetchWeather = async (cityName: string) => {
-  const response = await fetch('/api/weather/', {
-  //const response = await fetch('http://localhost:3001/api/weather', {
+  const response = await fetch('/api/weather', {
+    //const response = await fetch('http://localhost:3001/api/weather', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({cityName}),
+    body: JSON.stringify({ cityName }),
   });
 
   console.log("Response: ", response);
 
   const weatherData = await response.json();
 
-  console.log('weatherData: ', weatherData);
+  console.log(weatherData.currentWeather);
 
-  renderCurrentWeather(weatherData[0]);
-  renderForecast(weatherData.slice(1));
+  // renderCurrentWeather(weatherData[0]);
+  // renderForecast(weatherData.slice(1));
+  renderCurrentWeather(weatherData.currentWeather);
+  renderForecast(weatherData.forecast);
 };
 
 const fetchSearchHistory = async () => {
