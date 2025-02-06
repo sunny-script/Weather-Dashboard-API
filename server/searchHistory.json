@@ -1,14 +1,22 @@
 [
   {
-    "id": "a4dd0427-c487-44d9-b314-8b2d7871ace8",
-    "name": "Chicago"
-  },
-  {
     "id": "a13b5710-8910-4cfa-9204-d3f69b3f0ad9",
     "name": "Denver"
   },
   {
     "id": "30551d5f-74fb-499d-a7b1-c59c734c8c13",
     "name": "New York City"
+  },
+  {
+    "id": "49940c9b-a3de-4563-ada7-339f4eca708f",
+    "name": "Denver"
+  },
+  {
+    "id": "66214e22-84f2-424e-94f1-3db011873bc9",
+    "name": "Tacoma"
+  },
+  {
+    "id": "54b769fb-2412-404e-8e59-44dd78856f56",
+    "name": "Tacoma"
   }
 ]

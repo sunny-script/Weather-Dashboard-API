@@ -46,10 +46,11 @@ class HistoryService {
     const cities = await this.read();
   
     // Check for duplicate city names (case-insensitive)
-    if (cities.some(city => city.name.toLowerCase() === cityName.toLowerCase())) {
-      throw new Error('City already exists in the search history.');
-    }
+    // if (cities.some(city => city.name.toLowerCase() === cityName.toLowerCase())) {
+    //   throw new Error('City already exists in the search history.');
+    // }
   
+    
     const newCity = new City(cityName);
     cities.push(newCity);
   

@@ -71,7 +71,7 @@ const fetchWeather = async (cityName: string, isFromHistory = false) => {
   );
 
   const weatherData = await response.json();
-  console.log(weatherData.currentWeather);
+  // console.log(weatherData.currentWeather);
   renderCurrentWeather(weatherData.currentWeather);
   renderForecast(weatherData.forecast);
 };
@@ -85,6 +85,7 @@ const fetchSearchHistory = async () => {
       'Content-Type': 'application/json',
     },
   });
+
   return history;
 };
 
@@ -177,6 +178,7 @@ const renderForecastCard = (forecast: any) => {
 
 const renderSearchHistory = async (searchHistory: any) => {
   const historyList = await searchHistory.json();
+ 
 
   if (searchHistoryContainer) {
     searchHistoryContainer.innerHTML = '';
