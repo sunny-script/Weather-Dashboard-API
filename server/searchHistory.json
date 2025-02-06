@@ -1,42 +1,14 @@
 [
   {
-    "id": "35c6cbfc-e90d-46fc-9d83-c8fb03682c06",
-    "name": "Aspen"
-  },
-  {
-    "id": "1afcb354-343b-4cab-8863-503c57c98a9c",
-    "name": "Tacoma"
-  },
-  {
-    "id": "5001dba5-19cb-4c05-9aa4-b051c283848a",
-    "name": "Bellevue"
-  },
-  {
-    "id": "4cde0c03-faec-4174-abcc-29c216ffb5de",
+    "id": "a4dd0427-c487-44d9-b314-8b2d7871ace8",
     "name": "Chicago"
   },
   {
-    "id": "6cf049fc-e925-4075-ab06-ad35ce583fd0",
-    "name": "Roosevelt"
+    "id": "a13b5710-8910-4cfa-9204-d3f69b3f0ad9",
+    "name": "Denver"
   },
   {
-    "id": "23fadd90-7244-4b84-aed9-58fcdd2df0c2",
-    "name": "Paris"
-  },
-  {
-    "id": "d993abeb-2a0a-4972-b582-ddf0caf1d8e9",
-    "name": "Norfolk"
-  },
-  {
-    "id": "cc07b1e6-45fb-4417-9436-e920b0ecfc28",
-    "name": "Salt Lake City"
-  },
-  {
-    "id": "d011d2fa-dce6-4316-bd81-e8136f31f0b6",
-    "name": "Milwakee"
-  },
-  {
-    "id": "488f4391-66df-4e5f-8141-bb6cbf490678",
-    "name": "Pheonix"
+    "id": "30551d5f-74fb-499d-a7b1-c59c734c8c13",
+    "name": "New York City"
   }
 ]
