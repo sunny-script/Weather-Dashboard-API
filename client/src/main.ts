@@ -34,27 +34,49 @@ API Calls
 
 */
 
-const fetchWeather = async (cityName: string) => {
-  const response = await fetch('/api/weather', {
-    //const response = await fetch('http://localhost:3001/api/weather', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ cityName }),
-  });
+// const fetchWeather = async (cityName: string) => {
+//   const response = await fetch('/api/weather', {
+//     //const response = await fetch('http://localhost:3001/api/weather', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ cityName }),
+//   });
 
-  console.log("Response: ", response);
+//   console.log("Response: ", response);
+
+//   const weatherData = await response.json();
+
+//   console.log(weatherData.currentWeather);
+
+//    // renderCurrentWeather(weatherData[0]);
+//    // renderForecast(weatherData.slice(1));
+//   renderCurrentWeather(weatherData.currentWeather);
+//   renderForecast(weatherData.forecast);
+// };
+
+
+// beginning of update/trial
+const fetchWeather = async (cityName: string, isFromHistory = false) => {
+  const response = await fetch(
+    isFromHistory ? `/api/weather?city=${cityName}` : '/api/weather',
+    {
+      method: isFromHistory ? 'GET' : 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: isFromHistory ? null : JSON.stringify({ cityName }),
+    }
+  );
 
   const weatherData = await response.json();
-
   console.log(weatherData.currentWeather);
-
-  // renderCurrentWeather(weatherData[0]);
-  // renderForecast(weatherData.slice(1));
   renderCurrentWeather(weatherData.currentWeather);
   renderForecast(weatherData.forecast);
 };
+
+// end up update/trial
 
 const fetchSearchHistory = async () => {
   const history = await fetch('/api/weather/history', {
@@ -84,6 +106,15 @@ Render Functions
 const renderCurrentWeather = (currentWeather: any): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } =
     currentWeather;
+
+// const renderCurrentWeather = (currentWeather: any): void => {
+//   currentWeather.city;
+//   currentWeather.date;
+//   currentWeather.icon;
+//   currentWeather.iconDescription;
+//   currentWeather.tempF;
+//   currentWeather.windSpeed;
+//   currentWeather.humidity;
 
   // convert the following to typescript
   heading.textContent = `${city} (${date})`;
