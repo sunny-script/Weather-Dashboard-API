@@ -24,8 +24,6 @@ AS A traveler I WANT to see the weather outlook for multiple cities SO THAT I ca
 ## Screenshots & Video Reference
 ![Search Weather by City](image.png)
 
-See also the [Video Overview](https://drive.google.com/file/d/1k5ZMWh8kv9VRk_MJj0reWP4rzsp-y52P/view)
-
 ## Deployment
 Deployed via [Render](https://weather-dashboard-api-deployed.onrender.com)
 
